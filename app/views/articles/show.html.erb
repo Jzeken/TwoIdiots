@@ -1,6 +1,13 @@
 <h1>Showing selected article</h1>
 
 <p>Title: <%= @article.title %></p>
+<% if @article.user %>
+<ul>
+	<li>Created by:</li>
+	<li><%= link_to @article.user.username, user_path(@article.user) %></li>
+	<li><small><% pluralize(@article.user.articles.count, "article") if @article.user.articles %></small></li>
+</ul>
+<% end %>
 <p>Description: <%= @article.description %></p>
 
 <%= link_to "Edit this Articles", edit_article_path(@article) %> |
