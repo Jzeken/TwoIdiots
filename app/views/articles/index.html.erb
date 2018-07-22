@@ -1,5 +1,7 @@
 <h1>All articles</h1>
+<% if logged_in? %>
 <p><%= link_to "Create new article", new_article_path %></p>
+<% end %>
 <%= will_paginate %>
 <%= render 'article', obj: @articles %>
 <%= will_paginate %>
