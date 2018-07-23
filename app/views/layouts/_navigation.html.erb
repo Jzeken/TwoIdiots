@@ -1,7 +1,7 @@
 <div class="navbar-container">
 
   <div class="nav-title">
-    <h1>2iDIOTS</h1>
+    <h1><%= link_to '2iDIOTS', root_path %></h1>
   </div>
 
   <div class="nav-menu">
@@ -12,6 +12,9 @@
         <li>Insert dropdown list here for:</li>
         <li><%= link_to 'Edit Profile', edit_user_path(current_user) %></li>
         <li><%= link_to 'View Profile', user_path(current_user) %></li>
+        <% if current_user.admin? %>
+          <li><%= link_to 'View all Users', users_path %></li>
+        <% end %>
       <% else %>
         <li><%= link_to 'Login', login_path %></li>
         <li><%= link_to 'Sign up', signup_path %></li>
