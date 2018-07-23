@@ -1,0 +1,43 @@
+body{
+  background-color:#dff9fb;
+  font-family: sans-serif;
+}
+
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.container{
+  margin: 30%;
+}
+
+.wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  
+  
+  >#email, #password{
+    margin-bottom: 3px;
+    border-radius: 5px;
+    width: 20em;  
+    height: 30px;
+  }
+}
+
+.wrap{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  
+  >#login{
+    margin-top: 5px;
+    border-radius: 5px;
+    width: 10em;  
+    height: 30px;
+  }
+}
