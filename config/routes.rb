@@ -5,8 +5,8 @@ Rails.application.routes.draw do
 
   resources :articles do
   	member do
-  		put :like', to: 'articles#upvote'
-  		put :unlike', to: 'articles#downvote'
+  		put :like, to: 'articles#upvote'
+  		put :unlike, to: 'articles#downvote'
   	end
   end
 
