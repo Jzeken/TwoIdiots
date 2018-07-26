@@ -9,6 +9,23 @@
 </ul>
 <% end %>
 <p>Description: <%= @article.description %></p>
+
+<h2>Comments</h2>
+<% @article.comments.each do |comment| %>
+	<p><%= comment.user.username if comment.user %></p>
+	<p><%= time_ago_in_words(comment.created_at) %> ago</p>
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+  <p>
+  	<%= link_to 'Destroy Comment', [comment.article, comment],
+               	method: :delete,
+               	data: { confirm: 'Are you sure?' } %>
+	</p>
+<% end %>
+<%= render 'comments/form' %>
+
 <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
 	<%= link_to "Edit this article", edit_article_path(@article) %> |
 	<%= link_to "Delete this article", article_path(@article), method: :delete, data: {confirm: "Are you sure you want to delete the article?"} %> |
