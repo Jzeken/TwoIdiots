@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   	end
   end
 
+  resources :articles do
+    resources :comments
+  end
+
   get 'signup', to: 'users#new'
   resources :users, except: [:new]
 
